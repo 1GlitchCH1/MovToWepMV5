@@ -1,0 +1,24 @@
+2026-06-26 16:59:23,603 [INFO] Лог-файл: D:\Download-2\MovToWebpFix2\mov-to-webm\logs\conversion_2026-06-26_16-59-23.log
+2026-06-26 16:59:23,606 [INFO] Приложение запущено
+2026-06-26 16:59:24,306 [INFO] ffmpeg найден ✓  (CPU ядер: 16)
+2026-06-26 16:59:24,355 [INFO] av1_nvenc: найден ✓
+2026-06-26 17:15:19,083 [INFO] Входной файл: D:/Download-2/movtowebmPR/2026-06-17 03-30-37_4.webm  (3246.1 МБ)
+2026-06-26 17:15:20,914 [INFO] ========================================================
+2026-06-26 17:15:20,914 [INFO] Режим: AV1_GPU
+2026-06-26 17:15:21,053 [INFO] av1_nvenc: найден ✓
+2026-06-26 17:15:21,054 [INFO] ========================================================
+2026-06-26 17:15:21,054 [INFO] РЕЖИМ: GPU (av1_nvenc)  CQ=35  preset=p4
+2026-06-26 17:15:21,056 [INFO] Входной файл : D:/Download-2/movtowebmPR/2026-06-17 03-30-37_4.webm  (3246.1 МБ)
+2026-06-26 17:15:21,057 [INFO] Выходной файл: D:/Download-2/movtowebmPR/2026-06-17 03-30-37_4_av1gpu.webm
+2026-06-26 17:15:21,182 [INFO] Поток #0: vp9 yuv420p 1920x1080
+2026-06-26 17:15:21,182 [INFO] VP9 WebM: ffprobe не видит альфу явно (VP9 AlphaMode). ffmpeg прочитает альфу автоматически из единого потока.
+2026-06-26 17:15:21,186 [INFO] Длительность: 858.17с
+2026-06-26 17:15:21,189 [INFO] Pass 1 — цвет:
+  ffmpeg -y -i D:/Download-2/movtowebmPR/2026-06-17 03-30-37_4.webm -map 0:v:0 -vf format=yuv420p -c:v av1_nvenc -cq 35 -preset p4 -an -progress pipe:1 -nostats -loglevel error D:/Download-2/movtowebmPR\_tmp_2026-06-17 03-30-37_4_av1gpu_color.mp4
+2026-06-26 17:17:55,232 [INFO] Pass 2 — альфа:
+  ffmpeg -y -i D:/Download-2/movtowebmPR/2026-06-17 03-30-37_4.webm -map 0:v:0 -vf format=yuva420p,alphaextract,format=yuv420p -c:v av1_nvenc -cq 35 -preset p4 -an -progress pipe:1 -nostats -loglevel error D:/Download-2/movtowebmPR\_tmp_2026-06-17 03-30-37_4_av1gpu_alpha.mp4
+2026-06-26 17:20:38,580 [INFO] Pass 3 — mux:
+  ffmpeg -y -i D:/Download-2/movtowebmPR\_tmp_2026-06-17 03-30-37_4_av1gpu_color.mp4 -i D:/Download-2/movtowebmPR\_tmp_2026-06-17 03-30-37_4_av1gpu_alpha.mp4 -map 0:v:0 -map 1:v:0 -c copy -an -progress pipe:1 -nostats -loglevel error D:/Download-2/movtowebmPR/2026-06-17 03-30-37_4_av1gpu.webm
+2026-06-26 17:21:25,826 [INFO] === Готово! 1099.7 МБ (сжатие 66%) ===
+2026-06-26 17:21:25,859 [DEBUG] Удалён temp: D:/Download-2/movtowebmPR\_tmp_2026-06-17 03-30-37_4_av1gpu_color.mp4
+2026-06-26 17:21:26,007 [DEBUG] Удалён temp: D:/Download-2/movtowebmPR\_tmp_2026-06-17 03-30-37_4_av1gpu_alpha.mp4
